@@ -36,32 +36,33 @@
     <hr>
 
   <h2>My Posts</h2>
-  <!-- <div class="table-responsive">
-  <table class="table table-hover">
-    <thead>
-      <tr>
+  <div class="table-responsive">
+<!--  <table class="table table-hover">-->
+<!--    <thead>-->
+<!--      <tr>-->
 
-        <th>Title</th>
-        <th>Slug</th>
-        <th>Date</th>
-        <th>Edit</th>
-        <th>Delete</th>
-      </tr>
-    </thead>
-    <tbody>
-        {% for post in posts %}
-        <tr>
+<!--        <th>Title</th>-->
+<!--        <th>Slug</th>-->
+<!--        <th>Date</th>-->
+<!--        <th>Edit</th>-->
+<!--        <th>Delete</th>-->
+<!--      </tr>-->
+<!--    </thead>-->
+<!--    <tbody>-->
+<!--        {% for post in posts %}-->
+<!--        <tr>-->
 
-        <td>{{post.title}}</td>
-        <td><a href="/posts/post/{{post.slug}}">{{post.slug}}</td>
-        <td>{{post.date}}</td>
-        <td><a href="/posts/edit/{{post.sno}}"><button class="btn btn-primary float-right">Edit</button></a></td>
-        <td><a href="/posts/delete/{{post.sno}}"><button class="btn btn-primary float-right">Delete</button></a></td>
-        </tr>
-        {% endfor %}
-    </tbody>
-  </table>
-  </div> -->
+<!--        <td>{{post.title}}</td>-->
+<!--        <td><a href="/posts/post/{{post.slug}}">{{post.slug}}</td>-->
+<!--        <td>{{post.date}}</td>-->
+<!--        <td><a href="/posts/edit/{{post.sno}}"><button class="btn btn-primary float-right">Edit</button></a></td>-->
+<!--        <td><a href="/posts/delete/{{post.sno}}"><button class="btn btn-primary float-right">Delete</button></a></td>-->
+<!--        </tr>-->
+<!--        {% endfor %}-->
+<!--    </tbody>-->
+<!--  </table>-->
+<!--  </div>-->
+<!-- Below details added for cards to dashboard page  -->
   <div class="row">
     {% for post in posts %}
             <div class="col-md-4">
