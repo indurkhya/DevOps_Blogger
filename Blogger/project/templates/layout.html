@@ -10,8 +10,6 @@
 
   <title>{{params['title_name']}}</title>
 
-
-
   <!-- Bootstrap core CSS -->
   <link href="{{ url_for('static', filename="vendor/bootstrap/css/bootstrap.min.css") }}" rel="stylesheet">
 
@@ -22,6 +20,7 @@
 
   <!-- Custom styles for this template -->
   <link href=" {{ url_for('static', filename="css/clean-blog.min.css") }}" rel="stylesheet">
+<!-- Below we are styleing the layout  -->
   <style media="screen">
 
 #myBtn {
@@ -114,6 +113,7 @@ background-color: #555;
 {% block body %}  {% endblock %}
 
   <hr>
+  <!--From below we keep the concept for scroll top button  -->
   <!-- button to scroll top -->
    <button onclick="topFunction()" id="myBtn" title="Go to top">&#10148;</button>
   <!-- Footer -->
@@ -153,9 +153,6 @@ background-color: #555;
     </div>
   </footer>
 
-
-
-
 <script>
 //Get the button
 var mybutton = document.getElementById("myBtn");
@@ -180,10 +177,7 @@ function topFunction() {
   <!-- Bootstrap core JavaScript -->
   <script src={{ url_for('static', filename="vendor/jquery/jquery.min.js") }}></script>
   <script src={{ url_for('static', filename="vendor/bootstrap/js/bootstrap.bundle.min.js") }}></script>
-
   <!-- Custom scripts for this template -->
   <script src="{{ url_for('static', filename="js/clean-blog.min.js" ) }}"></script>
-
 </body>
-
 </html>
