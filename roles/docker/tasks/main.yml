@@ -18,6 +18,6 @@
   shell: docker build -t blog:1 '{{ ansible_user_dir}}/test/.'
 
 - name: Execute the command to run docker container
-  shell: docker run -d -p 17014:8000 --name test4 blog:1
+  shell: docker run -d -p 17015:8000 --name test5 blog:1
 
 
