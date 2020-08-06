@@ -19,3 +19,6 @@
 
 - name: Execute the command to run docker container
   shell: docker run -d -p 17030:8000 --name test40 blog:40
+
+
+
