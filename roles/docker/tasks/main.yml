@@ -15,7 +15,7 @@
     dest: "{{ansible_user_dir }}/test/"
 
 - name: Execute the command to build docker image
-  shell: docker build -t blog:40 '{{ ansible_user_dir}}/test/.'
+  shell: docker build -t blog:11 '{{ ansible_user_dir}}/test/.'
 
 - name: Execute the command to run docker container
-  shell: docker run -d -p 17030:8000 --name test40 blog:40
+  shell: docker run -d -p 17030:8000 --name test12 blog:11
