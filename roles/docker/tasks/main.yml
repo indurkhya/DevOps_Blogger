@@ -15,6 +15,7 @@
     dest: "{{ansible_user_dir }}/test/"
 
 - name: Execute the command to build docker image
+<<<<<<< HEAD
   shell: docker build -t blog:40 '{{ ansible_user_dir}}/test/.'
 
 - name: Execute the command to run docker container
@@ -22,3 +23,9 @@
 
 
 
+=======
+  shell: docker build -t blog:1 '{{ ansible_user_dir}}/test/.'
+
+- name: Execute the command to run docker container
+  shell: docker run -d -p 17016:8000 --name test6 blog:1
+>>>>>>> parent of 3200aec... Update main.yml
