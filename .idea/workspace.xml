@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="8ee92e94-a7de-47cd-96c1-465942dfcdca" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/Blogger/.coverage" beforeDir="false" afterPath="$PROJECT_DIR$/Blogger/.coverage" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Blogger/test.db" beforeDir="false" afterPath="$PROJECT_DIR$/Blogger/test.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Blogger/tests/views_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/Blogger/tests/views_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1fhx64MNvJU8y1EwHeeX0VP6kMJ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8ee92e94-a7de-47cd-96c1-465942dfcdca" name="Default Changelist" comment="" />
+      <created>1596683947425</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1596683947425</updated>
+    </task>
+    <servers />
+  </component>
+</project>
