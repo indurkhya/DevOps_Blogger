@@ -7,7 +7,6 @@ from project.contacts.models import Contacts
 @pytest.fixture
 def client():
     return flask_app.test_client()
-
 def test_home_page(client,init_db):
     response=client.get('/')
     assert response.status_code==200
