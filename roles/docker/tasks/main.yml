@@ -17,21 +17,24 @@
 - name: Execute the command to build docker image
   shell: docker build -t blog:12 '{{ ansible_user_dir}}/test/.'
 
-- name: Container present
-  docker_container:
-    name: mycontainer
-    state: present
-    image: blog:12
+# - name: Container present
+#   docker_container:
+#     name: mycontainer
+#     state: present
+#     image: blog:12
 
-- name: Stop a container
-  docker_container:
-    name: mycontainer
-    state: stopped
+# - name: Stop a container
+#   docker_container:
+#     name: mycontainer
+#     state: stopped
 
-- name: remove container
-  docker_container:
-    name: ohno
-    state: absent
+# - name: remove container
+#   docker_container:
+#     name: ohno
+#     state: absent
 
+- name: Execute the command to delete docker container
+  shell: docker container rm mycontainer -f
+  
 - name: Execute the command to run docker container
   shell: docker run -d -p 17031:8000 --name mycontainer blog:12
