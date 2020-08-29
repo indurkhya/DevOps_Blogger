@@ -52,7 +52,6 @@ def test_login_page(client):
     assert b"Login" not in response.data
     assert b"Register" not in response.data
 
-
     response = client.get('/logout', follow_redirects=True)
     assert response.status_code == 200
     assert b"you logged out" in response.data
