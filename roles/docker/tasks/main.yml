@@ -1,5 +1,4 @@
----
-# tasks file for ./roles/docker
+# tasks file for ./roles/docker/
 - name: Create a test directory if it does not exist
   file:
     path: "{{ansible_user_dir }}/test"
@@ -9,32 +8,26 @@
   copy:
     src: Dockerfile
     dest: "{{ansible_user_dir }}/test/"
-- name: Copy Blogger                     
+- name: Copy Blogger
   copy:
-    src: Blogger           
+    src: Blogger
     dest: "{{ansible_user_dir }}/test/"
 
 - name: Execute the command to build docker image
-  shell: docker build -t blog:12 '{{ ansible_user_dir}}/test/.'
+  shell: docker build -t blog:10 '{{ ansible_user_dir }}/test/.'
 
-# - name: Container present
-#   docker_container:
-#     name: mycontainer
-#     state: present
-#     image: blog:12
+- name: Get infos on container
+  shell: docker ps -a -f name=test10
+  register: result
 
-# - name: Stop a container
-#   docker_container:
-#     name: mycontainer
-#     state: stopped
-
-# - name: remove container
-#   docker_container:
-#     name: ohno
-#     state: absent
+- name: result
+  debug:
+    msg: "{{result.stdout_lines|length }}"
 
 - name: Execute the command to delete docker container
-  shell: docker container rm mycontainer -f
-  
+  shell: docker container rm test10 -f
+  when: result.stdout_lines|length == 2
+
+
 - name: Execute the command to run docker container
-  shell: docker run -d -p 17031:8000 --name mycontainer blog:12
+  shell: docker run -d -p 12321:8000 --name test10 blog:10
