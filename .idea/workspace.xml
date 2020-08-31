@@ -3,7 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="8ee92e94-a7de-47cd-96c1-465942dfcdca" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blogger/project/config.json" beforeDir="false" afterPath="$PROJECT_DIR$/Blogger/project/config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Blogger/.coverage" beforeDir="false" afterPath="$PROJECT_DIR$/Blogger/.coverage" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Blogger/htmlcov/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Blogger/htmlcov/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Blogger/htmlcov/status.json" beforeDir="false" afterPath="$PROJECT_DIR$/Blogger/htmlcov/status.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Blogger/htmlcov/tests_models_test_py.html" beforeDir="false" afterPath="$PROJECT_DIR$/Blogger/htmlcov/tests_models_test_py.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Blogger/htmlcov/tests_views_test_py.html" beforeDir="false" afterPath="$PROJECT_DIR$/Blogger/htmlcov/tests_views_test_py.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Blogger/test.db" beforeDir="false" afterPath="$PROJECT_DIR$/Blogger/test.db" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
