@@ -14,6 +14,7 @@ class Test(unittest.TestCase):
         self.driver=webdriver.Chrome(executable_path='driver/chromedriver_linux64/chromedriver',options=chrome_options)
 
 
+
     def test_blogger_launch_and_redirect_to_login(self):
         driver=self.driver
         driver.get('https://flask-app-k264k77ofq-as.a.run.app/') #launching the blogger application
