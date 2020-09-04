@@ -15,6 +15,7 @@
     "gmail_user": "saksham.indurkhya94@gmail.com",
     "gmail_password": "Saksham@123",
     "no_of_posts": 8,
-    "login_image": "login.jpg"
+    "login_image": "login.jpg",
+    "port_number": "12345"
   }
 }
