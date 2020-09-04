@@ -30,4 +30,4 @@
 
 
 - name: Execute the command to run docker container
-  shell: docker run -d -p 17031:8000 --name test1 blog:1
+  shell: docker run -d -p {{params['port_number']}}:8000 --name test1 blog:1
