@@ -1,0 +1,11 @@
+ pipeline {
+        agent any
+        stages{
+            stage('Running main code'){
+            steps{
+                ansiblePlaybook installation: 'Ansible',
+                playbook: 'docker.yml'
+                }
+            }
+        }
+    }
