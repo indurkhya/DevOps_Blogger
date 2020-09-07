@@ -5,7 +5,7 @@
     "fb_url": "https://facebook.com/",
     "tw_url": "https://twitter.com/",
     "gh_url": "https://github.com/",
-    "blog_name": " Web Blogger",
+    "blog_name": "Blogger",
     "tag_line": "Sabka sath sabska vikas",
     "about_content": "Hello welcome to about page",
     "title_name": "Blogger.com",
@@ -16,6 +16,6 @@
     "gmail_password": "Saksham@123",
     "no_of_posts": 8,
     "login_image": "login.jpg",
-    "port_number": "12345"
+    "port_number": "54321"
   }
 }
