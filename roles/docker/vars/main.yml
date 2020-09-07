@@ -1,2 +1,3 @@
 ---
 # vars file for ./roles/docker
+ip_address: 10.128.0.10
