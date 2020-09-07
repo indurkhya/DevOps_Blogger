@@ -20,7 +20,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8ee92e94-a7de-47cd-96c1-465942dfcdca" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Blogger/data.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/Blogger/data.sqlite" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/roles/docker/tasks/docker-swarm-service.yml" beforeDir="false" afterPath="$PROJECT_DIR$/roles/docker/tasks/docker-swarm-service.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -121,22 +120,22 @@
       <screen x="0" y="0" width="1366" height="736" />
     </state>
     <state x="0" y="0" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.736@0.0.1366.736" timestamp="1598888204199" />
-    <state width="1345" height="181" key="GridCell.Tab.0.bottom" timestamp="1599513583957">
+    <state width="1345" height="181" key="GridCell.Tab.0.bottom" timestamp="1599513860478">
       <screen x="0" y="0" width="1366" height="736" />
     </state>
-    <state width="1345" height="181" key="GridCell.Tab.0.bottom/0.0.1366.736@0.0.1366.736" timestamp="1599513583957" />
-    <state width="1345" height="181" key="GridCell.Tab.0.center" timestamp="1599513583957">
+    <state width="1345" height="181" key="GridCell.Tab.0.bottom/0.0.1366.736@0.0.1366.736" timestamp="1599513860478" />
+    <state width="1345" height="181" key="GridCell.Tab.0.center" timestamp="1599513860478">
       <screen x="0" y="0" width="1366" height="736" />
     </state>
-    <state width="1345" height="181" key="GridCell.Tab.0.center/0.0.1366.736@0.0.1366.736" timestamp="1599513583957" />
-    <state width="1345" height="181" key="GridCell.Tab.0.left" timestamp="1599513583956">
+    <state width="1345" height="181" key="GridCell.Tab.0.center/0.0.1366.736@0.0.1366.736" timestamp="1599513860478" />
+    <state width="1345" height="181" key="GridCell.Tab.0.left" timestamp="1599513860478">
       <screen x="0" y="0" width="1366" height="736" />
     </state>
-    <state width="1345" height="181" key="GridCell.Tab.0.left/0.0.1366.736@0.0.1366.736" timestamp="1599513583956" />
-    <state width="1345" height="181" key="GridCell.Tab.0.right" timestamp="1599513583957">
+    <state width="1345" height="181" key="GridCell.Tab.0.left/0.0.1366.736@0.0.1366.736" timestamp="1599513860478" />
+    <state width="1345" height="181" key="GridCell.Tab.0.right" timestamp="1599513860478">
       <screen x="0" y="0" width="1366" height="736" />
     </state>
-    <state width="1345" height="181" key="GridCell.Tab.0.right/0.0.1366.736@0.0.1366.736" timestamp="1599513583957" />
+    <state width="1345" height="181" key="GridCell.Tab.0.right/0.0.1366.736@0.0.1366.736" timestamp="1599513860478" />
     <state x="390" y="101" width="585" height="534" key="find.popup" timestamp="1598878653341">
       <screen x="0" y="0" width="1366" height="736" />
     </state>
