@@ -12,7 +12,7 @@
   when: result.stdout_lines|length > 1
 
 - name: Create JSON file content
-  shell: cat config.json
+  shell: cat Blogger/project/config.json
   register: result
 
 - name: save the Json data to a Variable as a Fact
