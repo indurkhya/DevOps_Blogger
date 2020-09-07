@@ -4,30 +4,25 @@
     path: "{{ansible_user_dir }}/test"
     state: directory
     mode: '0755'
+
 - name: Copy Dockerfile
   copy:
     src: Dockerfile
     dest: "{{ansible_user_dir }}/test/"
-- name: Copy Blogger
+
+- name: Copy Blogger.zip
   copy:
-    src: Blogger
+    src: Blogger.zip
     dest: "{{ansible_user_dir }}/test/"
 
+- name: Unarchive a file that is already on the remote machine
+  unarchive:
+    src: "{{ansible_user_dir }}/test/Blogger.zip"
+    dest: "{{ansible_user_dir }}/test/"
+    remote_src: yes
+
 - name: Execute the command to build docker image
-  shell: docker build -t blog:1 '{{ ansible_user_dir }}/test/.'
+  shell: docker build -t blog:10 '{{ ansible_user_dir }}/test/.'
 
-- name: Get infos on container
-  shell: docker ps -a -f name=test1
-  register: result
-
-- name: result
-  debug:
-    msg: "{{result.stdout_lines|length }}"
-
-- name: Execute the command to delete docker container
-  shell: docker container rm test1 -f
-  when: result.stdout_lines|length == 2
-
-
-- name: Execute the command to run docker container
-  shell: docker run -d -p 12345:8000 --name test1 blog:1
+- include_tasks: docker-swarm-service.yml
+# - include_tasks: docker-container.yml

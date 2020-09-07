@@ -16,7 +16,7 @@
                   nexusUrl: '10.128.0.10:8081',
                   nexusVersion: 'nexus3',
                   protocol: 'http',
-                  repository: 'devops-capstone',
+                  repository: 'python_code',
                   version: '1.0.0'
             }
           }
