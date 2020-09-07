@@ -21,7 +21,7 @@
   <component name="ChangeListManager">
     <list default="true" id="8ee92e94-a7de-47cd-96c1-465942dfcdca" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/roles/docker/vars/main.yml" beforeDir="false" afterPath="$PROJECT_DIR$/roles/docker/vars/main.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/roles/docker/tasks/docker-swarm-service.yml" beforeDir="false" afterPath="$PROJECT_DIR$/roles/docker/tasks/docker-swarm-service.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,6 +55,34 @@
       <recent name="D:\Pycharm_Code\blogger-master\Master\Web_Blogger\selenium\driver\chromedriver_linux64" />
     </key>
   </component>
+  <component name="RunManager">
+    <configuration name="app" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Web_Blogger" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\Saksham\AppData\Local\Programs\Python\Python38\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Blogger" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Blogger/app.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.app" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -81,6 +109,10 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="392" y="0" key="#app" timestamp="1599512839896">
+      <screen x="0" y="0" width="1366" height="736" />
+    </state>
+    <state x="392" y="0" key="#app/0.0.1366.736@0.0.1366.736" timestamp="1599512839896" />
     <state x="0" y="0" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1598888361824">
       <screen x="0" y="0" width="1366" height="736" />
     </state>
@@ -89,6 +121,22 @@
       <screen x="0" y="0" width="1366" height="736" />
     </state>
     <state x="0" y="0" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.736@0.0.1366.736" timestamp="1598888204199" />
+    <state width="1345" height="181" key="GridCell.Tab.0.bottom" timestamp="1599513180274">
+      <screen x="0" y="0" width="1366" height="736" />
+    </state>
+    <state width="1345" height="181" key="GridCell.Tab.0.bottom/0.0.1366.736@0.0.1366.736" timestamp="1599513180274" />
+    <state width="1345" height="181" key="GridCell.Tab.0.center" timestamp="1599513180273">
+      <screen x="0" y="0" width="1366" height="736" />
+    </state>
+    <state width="1345" height="181" key="GridCell.Tab.0.center/0.0.1366.736@0.0.1366.736" timestamp="1599513180273" />
+    <state width="1345" height="181" key="GridCell.Tab.0.left" timestamp="1599513180273">
+      <screen x="0" y="0" width="1366" height="736" />
+    </state>
+    <state width="1345" height="181" key="GridCell.Tab.0.left/0.0.1366.736@0.0.1366.736" timestamp="1599513180273" />
+    <state width="1345" height="181" key="GridCell.Tab.0.right" timestamp="1599513180273">
+      <screen x="0" y="0" width="1366" height="736" />
+    </state>
+    <state width="1345" height="181" key="GridCell.Tab.0.right/0.0.1366.736@0.0.1366.736" timestamp="1599513180273" />
     <state x="390" y="101" width="585" height="534" key="find.popup" timestamp="1598878653341">
       <screen x="0" y="0" width="1366" height="736" />
     </state>
