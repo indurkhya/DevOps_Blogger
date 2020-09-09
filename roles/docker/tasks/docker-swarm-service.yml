@@ -26,4 +26,4 @@
     jmesquery: 'params.port_number'
 
 - name: Create Blog service
-  shell: docker service create --name blog -p {{ admin_Port }}:8000 --replicas 2 blog:10
+  shell: docker service create --name blog -p {{ admin_Port }}:8000 blog:10
