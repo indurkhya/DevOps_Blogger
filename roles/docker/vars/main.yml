@@ -1,4 +1,19 @@
 ---
 # vars file for ./roles/docker
 ip_address: 10.128.0.10
-admin_Port: 54321
+
+- name: Create JSON file content
+  shell: cat Blogger/project/config.json
+  register: result
+
+- name: save the Json data to a Variable as a Fact
+  set_fact:
+    jsondata: "{{ result.stdout | from_json }}"
+
+- name: Listen port number from config.json
+  set_fact:
+    admin_Port: "{{ jsondata | json_query(jmesquery) }}"
+  vars:
+    jmesquery: 'params.port_number'
+
+# admin_Port: 54321
