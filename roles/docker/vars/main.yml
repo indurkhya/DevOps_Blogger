@@ -13,7 +13,7 @@ jmesquery: 'params.port_number'
 # - name: Listen port number from config.json
 #   set_fact:
 #     admin_Port: "{{ jsondata | json_query(jmesquery) }}"
-  vars:
-    jmesquery: 'params.port_number'
+#   vars:
+#     jmesquery: 'params.port_number'
 
 # admin_Port: 54321
