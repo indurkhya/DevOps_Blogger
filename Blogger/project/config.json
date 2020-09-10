@@ -17,6 +17,6 @@
     "no_of_posts": 8,
     "login_image": "login.jpg",
     "port_number": "54321",
-    "ip_address": 10.128.0.16
+    "ip_address": "10.128.0.16"
   }
 }
