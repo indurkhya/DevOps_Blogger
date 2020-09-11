@@ -67,10 +67,10 @@ pipeline {
         }
         
             // Post-build actions
-         post {
-            always {
-              script {
-                BUILD_USER = getBuildUser()
+    post {
+         always {
+           script {
+              BUILD_USER = getBuildUser()
             }
             echo 'I will always say hello in the console.'
             slackSend channel: 'capstone-project',
