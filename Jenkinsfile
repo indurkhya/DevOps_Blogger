@@ -32,5 +32,8 @@ pipeline {
                 ansiblePlaybook installation: 'ansible', playbook: 'docker.yml'
             }
         }
+        stage('Slack Notification') {
+            slackSend channel: 'capstone-project', tokenCredentialId: 'slack-key'
+       }
     }
 }
