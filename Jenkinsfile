@@ -33,7 +33,9 @@ pipeline {
             }
         }
          stage('Slack Notification') {
-            slackSend channel: 'capstone-project', tokenCredentialId: 'slack-key'
+             steps {
+                 slackSend channel: 'capstone-project', tokenCredentialId: 'slack-key'
+             }      
        }
     }
 }
