@@ -65,7 +65,7 @@ pipeline {
                 echo "Success :)"
             }
         }
-        
+    }   
             // Post-build actions
     post {
          always {
@@ -79,4 +79,3 @@ pipeline {
         }
     }
   }
-}
