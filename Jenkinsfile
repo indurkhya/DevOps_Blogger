@@ -34,7 +34,7 @@ pipeline {
         }
          stage('Slack Notification') {
              steps {
-                 slackSend channel: 'capstone-project', color: 'good', message: '"started ${env.JOB_NAME} ${env.BUILD_NUMBER} (<${env.BUILD_URL}|Open>)"', tokenCredentialId: 'slack-key'
+                slackSend channel: 'capstone-project', color: 'good', message: 'Started $BUILD_NUMBER, $JOB_NAME', tokenCredentialId: 'slack-key'
              }      
        }
     }
