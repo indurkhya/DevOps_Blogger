@@ -4,11 +4,11 @@
   ignore_errors: yes
 
 - name: checking whether blogger service is exists or not
-  shell: docker node ps -f name=blog
+  shell: docker node ps -f name=web_blogger
   register: result
 
 - name: Delete Blog service
-  shell: docker service rm blog
+  shell: docker service rm web_blogger
   when: result.stdout_lines|length > 1
 
 - name: Create JSON file content
@@ -26,4 +26,4 @@
 #     jmesquery: 'params.port_number'
 
 - name: Create Blog service
-  shell: docker service create --name blog -p {{ admin_Port }}:8000 blog:10
+  shell: docker service create --name web_blogger -p {{ admin_Port }}:8000 blog:10
