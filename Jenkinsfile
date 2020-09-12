@@ -11,52 +11,47 @@ pipeline {
                 python3 test_login.py'''
             }
             post { 
-                    success { 
+                success { 
                         slackSend channel: 'capstone-project', color: 'good', message: 'successful completed Unit & Functional Test_Case stage'
-                            }
-                    
-                    failure{
+                        }   
+                 failure {
                           slackSend channel: 'capstone-project', color: 'danger', message: ' failed Unit Test_Case stage'
-                    }
+                         }
             }
             
         }
         stage('SonarQube analysis and created zip file') {
                environment {
-              scannerHome= tool name: 'SonarQube Scanner 3.0.2.768', type: 'hudson.plugins.sonar.SonarRunnerInstallation'
-             } 
-             steps 
+                            scannerHome= tool name: 'SonarQube Scanner 3.0.2.768', type: 'hudson.plugins.sonar.SonarRunnerInstallation'
+                           } 
+            steps {
                   withSonarQubeEnv("Scan") {
                       slackSend channel: 'capstone-project', color: 'good', message: 'SonarQube stage started.'
-                   sh '''${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=Project -Dsonar.projectName=Blogger${BUILD_NUMBER} -Dsonar.projectVersion=1.0 -Dsonar.sources=Blogger -Dsonar.exclusions=**/*.html,**/*.css,**/*.js -Dsonar.sourceEncoding=UTF-8 -Dsonar.python.coverage.reportPath=Blogger/coverage.xml '''
+                      sh '''${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=Project -Dsonar.projectName=Blogger${BUILD_NUMBER} -Dsonar.projectVersion=1.0 -Dsonar.sources=Blogger -Dsonar.exclusions=**/*.html,**/*.css,**/*.js -Dsonar.sourceEncoding=UTF-8 -Dsonar.python.coverage.reportPath=Blogger/coverage.xml '''
                   }
-  
                  sh label: '', script: ' zip Blogger.zip -r Blogger'
-           }
-                        post { 
-                    success { 
-                        slackSend channel: 'capstone-project', color: 'good', message: 'successful completed SonarQube analysis & zip creation stage'
-                            }
-                    
-                    failure{
-                          slackSend channel: 'capstone-project', color: 'danger', message: ' failed SonarQube analysis & zip creation stage'
-                    }
             }
-            
+             post { 
+               success { 
+                        slackSend channel: 'capstone-project', color: 'good', message: 'successful completed SonarQube analysis & zip creation stage'
+                       }     
+               failure {
+                        slackSend channel: 'capstone-project', color: 'danger', message: ' failed SonarQube analysis & zip creation stage'
+                       }
+             }
          }
          stage('Jfrog_upload') { 
             steps {
                  slackSend channel: 'capstone-project', color: 'good', message: 'Jfrog stage started.'
                  sh label: '', script: 'curl -uadmin:admin@123 -T *.zip "http://localhost:8083/artifactory/example-repo-local/Capstone_${BUILD_NUMBER}/"'
             }
-                         post { 
-                    success { 
-                        slackSend channel: 'capstone-project', color: 'good', message: 'successful completed Jfrog_upload stage'
-                            }
-                    
-                    failure{
+            post {
+                success { 
+                          slackSend channel: 'capstone-project', color: 'good', message: 'successful completed Jfrog_upload stage'
+                        }          
+                failure {
                           slackSend channel: 'capstone-project', color: 'danger', message: ' failed Jfrog_upload stage'
-                    }
+                        }
             }
         }
          stage('Deploy') { 
@@ -64,25 +59,23 @@ pipeline {
                 slackSend channel: 'capstone-project', color: 'good', message: 'Deploy stage started.'
                 ansiblePlaybook installation: 'ansible', playbook: 'docker.yml'
             }
-                         post { 
-                    success { 
+             post { 
+               success { 
                         slackSend channel: 'capstone-project', color: 'good', message: 'successful completed Deploy stage'
-                            }
-                    
-                    failure{
-                          slackSend channel: 'capstone-project', color: 'danger', message: ' failed Deploy stage'
-                    }
+                       }                 
+               failure {
+                        slackSend channel: 'capstone-project', color: 'danger', message: ' failed Deploy stage'
+                       }
             }
         }        
     }   
-            // Post-build actions
+ // Post-build Slack Notification action
 post { 
-             success { 
-                        slackSend channel: 'capstone-project', color: 'good', message: " Successfully Completed :'${env.JOB_NAME}' Build Number: '${env.BUILD_NUMBER}' Build URL: '(<${env.BUILD_URL}|Open>)'"
-                     }
-                    
-              failure {
-                          slackSend channel: 'capstone-project', color: 'danger', message: " Failed :'${env.JOB_NAME}' Build Number: '${env.BUILD_NUMBER}' Build URL: '(<${env.BUILD_URL}|Open>)'"
-                    }
-             }
-  }
+    success {
+                slackSend channel: 'capstone-project', color: 'good', message: " Successfully Completed :'${env.JOB_NAME}' Build Number: '${env.BUILD_NUMBER}' Build URL: '(<${env.BUILD_URL}|Open>)'"
+            }                
+    failure {
+                slackSend channel: 'capstone-project', color: 'danger', message: " Failed :'${env.JOB_NAME}' Build Number: '${env.BUILD_NUMBER}' Build URL: '(<${env.BUILD_URL}|Open>)'"
+            }
+    }
+}
