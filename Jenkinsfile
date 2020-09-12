@@ -3,6 +3,7 @@ pipeline {
     stages {
         stage('Test') { 
             steps {
+                slackSend channel: 'capstone-project', color: 'good', message: 'Unit & Funtional Test_Case started.'
                 sh label: '', script: '''cd Blogger
                 python3 -m coverage run --source tests,project,config -m  pytest -v
                 python3 -m coverage xml -i
@@ -25,8 +26,10 @@ pipeline {
               scannerHome= tool name: 'SonarQube Scanner 3.0.2.768', type: 'hudson.plugins.sonar.SonarRunnerInstallation'
              } 
              steps {
+                 slackSend channel: 'capstone-project', color: 'good', message: 'SonarQube stage started.'
                   withSonarQubeEnv("Scan") {
-                   sh '''${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=Project -Dsonar.projectName=Blogger${BUILD_NUMBER} -Dsonar.projectVersion=1.0 -Dsonar.sources=Blogger -Dsonar.exclusions=**/*.html,**/*.css,**/*.js -Dsonar.sourceEncoding=UTF-8 -Dsonar.python.coverage.reportPath=Blogger/coverage.xml '''
+                   sh '''${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=Project -Dsonar.projectName=Blogger${BUILD_NUMBER} -Dsonar.projectVersion=1.0 -Dsonar.sources=Blogger -Dsonar.exclusions=**/*.html,**/*.css,**/*.js -Dsonar.sourceEncodi
+                   ng=UTF-8 -Dsonar.python.coverage.reportPath=Blogger/coverage.xml '''
                   }
   
                  sh label: '', script: ' zip Blogger.zip -r Blogger'
@@ -44,6 +47,7 @@ pipeline {
          }
          stage('Jfrog_upload') { 
             steps {
+                 slackSend channel: 'capstone-project', color: 'good', message: 'Jfrog stage started.'
                  sh label: '', script: 'curl -uadmin:admin@123 -T *.zip "http://localhost:8083/artifactory/example-repo-local/Capstone_${BUILD_NUMBER}/"'
             }
                          post { 
@@ -58,6 +62,7 @@ pipeline {
         }
          stage('Deploy') { 
             steps {
+                slackSend channel: 'capstone-project', color: 'good', message: 'Deploy stage started.'
                 ansiblePlaybook installation: 'ansible', playbook: 'docker.yml'
             }
                          post { 
