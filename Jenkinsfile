@@ -27,7 +27,7 @@ pipeline {
             steps {
                   withSonarQubeEnv("Scan") {
                       slackSend channel: 'web-blogger', color: 'good', message: 'SonarQube stage started.'
-                      sh '''${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=Project -Dsonar.projectName=Blogger${BUILD_NUMBER} -Dsonar.projectVersion=1.0 -Dsonar.sources=Blogger -Dsonar.exclusions=**/*.html,**/*.css,**/*.js -Dsonar.sourceEncoding=UTF-8 -Dsonar.python.coverage.reportPath=Blogger/coverage.xml '''
+                      sh '''${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=Project -Dsonar.projectName=Blogger${BUILD_NUMBER} -Dsonar.projectVersion=1.0 -Dsonar.sources=Blogger/project/ -Dsonar.exclusions=**/*.html,**/*.css,**/*.js -Dsonar.sourceEncoding=UTF-8 -Dsonar.python.coverage.reportPath=Blogger/coverage.xml '''
                   }
                  sh label: '', script: ' zip Blogger.zip -r Blogger'
             }
