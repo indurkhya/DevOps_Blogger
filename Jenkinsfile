@@ -1,16 +1,4 @@
-def COLOR_MAP = [
-    'SUCCESS': 'good', 
-    'FAILURE': 'danger',
-]
-def getBuildUser() {
-    return currentBuild.rawBuild.getCause(Cause.UserIdCause).getUserId()
-}
 pipeline {
-    environment {
-        // test variable: 0=success, 1=fail; must be string
-        doError = '0'
-        BUILD_USER = ''
-    }
     agent any 
     stages {
         stage('Test') { 
@@ -21,6 +9,16 @@ pipeline {
                 cd ../selenium
                 python3 test_login.py'''
             }
+            post { 
+                    success { 
+                        slackSend channel: 'capstone-project', color: 'good', message: 'successful Unit Test_Case stage'
+                            }
+                    
+                    failure{
+                          slackSend channel: 'capstone-project', color: 'danger', message: ' failed Unit Test_Case stage'
+                    }
+            }
+            
         }
         stage('SonarQube analysis and created zip file') {
                environment {
@@ -33,48 +31,54 @@ pipeline {
   
                  sh label: '', script: ' zip Blogger.zip -r Blogger'
            }
+                        post { 
+                    success { 
+                        slackSend channel: 'capstone-project', color: 'good', message: 'successful SonarQube analysis & zip creation stage'
+                            }
+                    
+                    failure{
+                          slackSend channel: 'capstone-project', color: 'danger', message: ' failed SonarQube analysis & zip creation stage'
+                    }
+            }
+            
          }
          stage('Jfrog_upload') { 
             steps {
                  sh label: '', script: 'curl -uadmin:admin@123 -T *.zip "http://localhost:8083/artifactory/example-repo-local/Capstone_${BUILD_NUMBER}/"'
+            }
+                         post { 
+                    success { 
+                        slackSend channel: 'capstone-project', color: 'good', message: 'successful Jfrog_upload stage'
+                            }
+                    
+                    failure{
+                          slackSend channel: 'capstone-project', color: 'danger', message: ' failed Jfrog_upload stage'
+                    }
             }
         }
          stage('Deploy') { 
             steps {
                 ansiblePlaybook installation: 'ansible', playbook: 'docker.yml'
             }
-        }
-         stage('Error') {
-            // when doError is equal to 1, return an error
-         when {
-                expression { doError == '1' }
-         }
-         steps {
-                echo "Failure :("
-                error "Test failed on purpose, doError == str(1)"
+                         post { 
+                    success { 
+                        slackSend channel: 'capstone-project', color: 'good', message: 'successful Deploy stage'
+                            }
+                    
+                    failure{
+                          slackSend channel: 'capstone-project', color: 'danger', message: ' failed Deploy stage'
+                    }
             }
-        }
-        stage('Success') {
-            // when doError is equal to 0, just print a simple message
-        when {
-                expression { doError == '0' }
-         }
-        steps {
-                echo "Success :)"
-            }
-        }
-        
+        }        
     }   
             // Post-build actions
-    post {
-         always {
-           script {
-              BUILD_USER = getBuildUser()
-            }
-            echo 'I will always say hello in the console.'
-            slackSend channel: 'capstone-project',
-                color: COLOR_MAP[currentBuild.currentResult], tokenCredentialId: 'slack-key', 
-                message: "*${currentBuild.currentResult}:* Job ${env.JOB_NAME} build ${env.BUILD_NUMBER} by ${BUILD_USER}\n More info at: ${env.BUILD_URL}"
-        }
-    }
+post { 
+             success { 
+                        slackSend channel: 'capstone-project', color: 'good', message: " Successfully Completed :'${env.JOB_NAME}' Build Number: '${env.BUILD_NUMBER}' Build URL: '(<${env.BUILD_URL}|Open>)'"
+                     }
+                    
+              failure {
+                          slackSend channel: 'capstone-project', color: 'danger', message: " Failed :'${env.JOB_NAME}' Build Number: '${env.BUILD_NUMBER}' Build URL: '(<${env.BUILD_URL}|Open>)'"
+                    }
+             }
   }
