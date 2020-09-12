@@ -12,7 +12,7 @@ pipeline {
             }
             post { 
                     success { 
-                        slackSend channel: 'capstone-project', color: 'good', message: 'successful Unit Test_Case stage'
+                        slackSend channel: 'capstone-project', color: 'good', message: 'successful completed Unit & Functional Test_Case stage'
                             }
                     
                     failure{
@@ -25,18 +25,17 @@ pipeline {
                environment {
               scannerHome= tool name: 'SonarQube Scanner 3.0.2.768', type: 'hudson.plugins.sonar.SonarRunnerInstallation'
              } 
-             steps {
-                 slackSend channel: 'capstone-project', color: 'good', message: 'SonarQube stage started.'
+             steps 
                   withSonarQubeEnv("Scan") {
-                   sh '''${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=Project -Dsonar.projectName=Blogger${BUILD_NUMBER} -Dsonar.projectVersion=1.0 -Dsonar.sources=Blogger -Dsonar.exclusions=**/*.html,**/*.css,**/*.js -Dsonar.sourceEncodi
-                   ng=UTF-8 -Dsonar.python.coverage.reportPath=Blogger/coverage.xml '''
+                      slackSend channel: 'capstone-project', color: 'good', message: 'SonarQube stage started.'
+                   sh '''${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=Project -Dsonar.projectName=Blogger${BUILD_NUMBER} -Dsonar.projectVersion=1.0 -Dsonar.sources=Blogger -Dsonar.exclusions=**/*.html,**/*.css,**/*.js -Dsonar.sourceEncoding=UTF-8 -Dsonar.python.coverage.reportPath=Blogger/coverage.xml '''
                   }
   
                  sh label: '', script: ' zip Blogger.zip -r Blogger'
            }
                         post { 
                     success { 
-                        slackSend channel: 'capstone-project', color: 'good', message: 'successful SonarQube analysis & zip creation stage'
+                        slackSend channel: 'capstone-project', color: 'good', message: 'successful completed SonarQube analysis & zip creation stage'
                             }
                     
                     failure{
@@ -52,7 +51,7 @@ pipeline {
             }
                          post { 
                     success { 
-                        slackSend channel: 'capstone-project', color: 'good', message: 'successful Jfrog_upload stage'
+                        slackSend channel: 'capstone-project', color: 'good', message: 'successful completed Jfrog_upload stage'
                             }
                     
                     failure{
@@ -67,7 +66,7 @@ pipeline {
             }
                          post { 
                     success { 
-                        slackSend channel: 'capstone-project', color: 'good', message: 'successful Deploy stage'
+                        slackSend channel: 'capstone-project', color: 'good', message: 'successful completed Deploy stage'
                             }
                     
                     failure{
