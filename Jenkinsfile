@@ -43,7 +43,7 @@ pipeline {
          stage('Jfrog_upload') { 
             steps {
                  slackSend channel: 'web-blogger', color: 'good', message: 'Jfrog stage started.'
-                 sh label: '', script: 'curl -uadmin:admin@123 -T *.zip "http://localhost:8083/artifactory/example-repo-local/Capstone_${BUILD_NUMBER}/"'
+                 sh label: '', script: 'curl -uadmin:admin@123 -T *.zip "http://localhost:8083/artifactory/Artifacts_repo_pipeline/Capstone_${BUILD_NUMBER}/"'
             }
             post {
                 success { 
