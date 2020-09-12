@@ -21,7 +21,10 @@
   <component name="ChangeListManager">
     <list default="true" id="8ee92e94-a7de-47cd-96c1-465942dfcdca" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/roles/docker/tasks/docker-swarm-service.yml" beforeDir="false" afterPath="$PROJECT_DIR$/roles/docker/tasks/docker-swarm-service.yml" afterDir="false" />
+=======
+>>>>>>> devops
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

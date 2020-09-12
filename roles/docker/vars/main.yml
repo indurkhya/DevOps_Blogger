@@ -1,3 +1,4 @@
 ---
 # vars file for ./roles/docker
-ip_address: 10.128.0.10
+ip_address: 'params.ip_address'
+jmesquery: 'params.port_number'
