@@ -57,7 +57,7 @@ pipeline {
          stage('Deploy') { 
             steps {
                 slackSend channel: 'web-blogger', color: 'good', message: 'Deploy stage started.'
-                ansiblePlaybook installation: 'ansible', playbook: 'docker.yml'
+                ansiblePlaybook 'docker.yml'
             }
              post { 
                success { 
