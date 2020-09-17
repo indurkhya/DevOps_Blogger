@@ -11,19 +11,5 @@
   shell: docker service rm web_blogger
   when: result.stdout_lines|length > 1
 
-- name: Create JSON file content
-  shell: cat Blogger/project/config.json
-  register: result
-
-- name: save the Json data to a Variable as a Fact
-  set_fact:
-    jsondata: "{{ result.stdout | from_json }}"
-
-- name: Listen port number from config.json
-  set_fact:
-    admin_Port: "{{ jsondata | json_query(jmesquery) }}"
-#   vars:
-#     jmesquery: 'params.port_number'
-
 - name: Create Blog service
-  shell: docker service create --name web_blogger -p {{ admin_Port }}:8000 blog:10
+  shell: docker service create --name web_blogger -p 12321:8000 blog:10
