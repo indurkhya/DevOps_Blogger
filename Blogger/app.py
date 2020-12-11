@@ -87,6 +87,5 @@ def search():
         return render_template('search.html',params=params,posts=posts)
     return render_template('search.html',params=params)
 
-
 if __name__=='__main__':
     app.run(debug=False)
