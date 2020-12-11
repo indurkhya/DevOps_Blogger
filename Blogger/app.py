@@ -6,7 +6,6 @@ from project.like.models import Like
 from flask_login import login_user,login_required,logout_user,current_user
 import math
 
-
 @app.route('/')
 def index():
     posts = Posts.query.all()[::-1]
@@ -55,7 +54,6 @@ def login():
             return redirect(next)
     return render_template('login.html',params=params)
 
-
 @app.route('/logout')
 @login_required
 def logout():
@@ -73,7 +71,6 @@ def like_action(post_id,action):
         current_user.unlike_post(post)
         db.session.commit()
     return redirect(url_for('index'))
-
 
 @app.route('/term_cond')
 def term_cond():
