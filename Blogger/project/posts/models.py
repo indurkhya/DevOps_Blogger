@@ -1,4 +1,4 @@
-# posts models
+# posts models similarly known as Table in DB
 
 
 from project import db

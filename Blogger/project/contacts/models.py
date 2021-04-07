@@ -9,3 +9,5 @@ class Contacts(db.Model):
     phone_no = db.Column(db.String(10), nullable=False)
     msg = db.Column(db.String(120),  nullable=False)
     date = db.Column(db.String(120), nullable=True)
+    # # new filed added on 12 DEC 2020
+    # alt_phone_no = db.Column(db.String(10), nullable=True)

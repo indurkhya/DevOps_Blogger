@@ -9,6 +9,7 @@ from flask_login import LoginManager
 login_manager=LoginManager()
 
 Basedir=os.path.abspath(os.path.dirname(__name__))
+print(Basedir)
 
 with open(Basedir+'/project/config.json', 'r') as c:
     params = json.load(c)["params"]
